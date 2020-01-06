@@ -1,0 +1,137 @@
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HPV IMPACT PROFILE ARABIC</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script type="text/javascript" src="data/question.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body ng-app="Questionnaire" ng-controller="main">
+    <div class="content">
+
+        <div ng-show="page1">
+            <h4>
+                نرجو منك أن تفكري باخر زيارة عند طبيبك، حيث خضعت لفحوصات سريرية و طبية مثل فحص الزجاجة أو غيره أو استلمت
+                نتائج هذه الفحوصات، عندما تجيبين على هذه الاسئلة
+            </h4>
+            <hr />
+            <form role="form">
+                <div ng-repeat="question in questions" class="Question">
+                    <label for="myRange">{{question.Label}}</label>
+                    <div class="slider-container">
+                        <div class="labels-container">
+                            <ul class="labels" style="width:100%">
+                                <li style="width:12.5%; text-align: right;"> <span>أبداً</span> </li>
+                                <li style="width:25%"> <span>قليلاً جداً</span> </li>
+                                <li style="width:25%"> <span>قليلاً</span> </li>
+                                <li style="width:25%"> <span>كثيراً</span> </li>
+                                <li style="width:12.5%;text-align: left;"> <span>كثيراً جداً</span> </li>
+                            </ul>
+                            <ul class="numbers">
+                                <li style="width:5%;text-align: right;"> 0 </li>
+                                <li style="width:10%"> 1 </li>
+                                <li style="width:10%"> 2 </li>
+                                <li style="width:10%"> 3 </li>
+                                <li style="width:10%"> 4 </li>
+                                <li style="width:10%"> 5 </li>
+                                <li style="width:10%"> 6 </li>
+                                <li style="width:10%"> 7 </li>
+                                <li style="width:10%"> 8 </li>
+                                <li style="width:10%"> 9 </li>
+                                <li style="width:5%;text-align: left;"> 10 </li>
+                            </ul>
+                        </div>
+                        <input type="range" min="0" max="10" ng-model="question.value" class="slider" name="myRange" required=true>
+                    </div>
+                    <hr>
+                </div>
+                <input class="submit" type="submit" value=">>" ng-click="GetTotal()"  />
+            </form>
+        </div>
+
+        <div ng-show="page2" dir="ltr">
+            <table>
+                <tr>
+                    <th>Domaine Principaux</th>
+                    <th>Score</th>
+                </tr>
+                <tr>
+                    <td>Les soucis et les préoccupations</td>
+                    <td>{{principal.Preoccupation}}</td>
+                </tr>
+                <tr>
+                    <td>L’impact émotionnel</td>
+                    <td>{{principal.EmotionalImpact}}</td>
+                </tr>
+                <tr>
+                    <td>L’impact sexuel</td>
+                    <td>{{principal.SexuelImpact}}</td>
+                </tr>
+                <tr>
+                    <td>L'image de soi</td>
+                    <td>{{principal.SelfImage}}</td>
+                </tr>
+                <tr>
+                    <td>Les problèmes avec le partenaire et la transmission</td>
+                    <td>{{principal.Partner}}</td>
+                </tr>
+                <tr>
+                    <td>L'interaction avec le médecin</td>
+                    <td>{{principal.Doctor}}</td>
+                </tr>
+                <tr>
+                    <td>L'impact sur la vie</td>
+                    <td>{{principal.Life}}</td>
+                </tr>
+                <tr>
+                    <td>Score total</td>
+                    <td>{{Total}}</td>
+                </tr>
+            </table>
+            <br />
+            <br />
+            <br />
+            <table>
+                <tr>
+                    <th>Domaine Alternatifs</th>
+                    <th>Score</th>
+                </tr>
+                <tr>
+                    <td>Les soucis et les préoccupations</td>
+                    <td>{{alternatif.Preoccupation}}</td>
+                </tr>
+                <tr>
+                    <td>L’impact émotionnel</td>
+                    <td>{{alternatif.EmotionalImpact}}</td>
+                </tr>
+                <tr>
+                    <td>L’impact sexuel</td>
+                    <td>{{alternatif.SexuelImpact}}</td>
+                </tr>
+                <tr>
+                    <td>Transmission ou traitement futur</td>
+                    <td>{{alternatif.Transmission}}</td>
+                </tr>
+                <tr>
+                    <td>Les émotions positives</td>
+                    <td>{{alternatif.Positives}}</td>
+                </tr>
+                <tr>
+                    <td>Les émotions négatives</td>
+                    <td>{{alternatif.Negatives}}</td>
+                </tr>
+                <tr>
+                    <td>Score total</td>
+                    <td>{{Total}}</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</body>
+
+</html>
