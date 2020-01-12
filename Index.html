@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>HPV IMPACT PROFILE ARABIC</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script type="text/javascript" src="source.js"></script>
     <script type="text/javascript" src="data/question.js"></script>
     <script type="text/javascript" src="script.js"></script>
 </head>
@@ -56,40 +56,49 @@
         <div ng-show="page2" dir="ltr">
             <table>
                 <tr>
-                    <th>Domaine Principaux</th>
+                    <th>Domaines Principaux</th>
                     <th>Score</th>
+                    <th style="text-align: right;">المجالات الرئيسية</th>
                 </tr>
                 <tr>
                     <td>Les soucis et les préoccupations</td>
                     <td>{{principal.Preoccupation}}</td>
+                    <td style="text-align: right;">الهموم والمخاوف</td>
                 </tr>
                 <tr>
                     <td>L’impact émotionnel</td>
                     <td>{{principal.EmotionalImpact}}</td>
+                    <td style="text-align: right;">التّأثير العاطفيّ</td>
                 </tr>
                 <tr>
                     <td>L’impact sexuel</td>
                     <td>{{principal.SexuelImpact}}</td>
+                    <td style="text-align: right;">التّأثير الجنسيّ</td>
                 </tr>
                 <tr>
                     <td>L'image de soi</td>
                     <td>{{principal.SelfImage}}</td>
+                    <td style="text-align: right;">التّقييم الذّاتيّ</td>
                 </tr>
                 <tr>
                     <td>Les problèmes avec le partenaire et la transmission</td>
                     <td>{{principal.Partner}}</td>
+                    <td style="text-align: right;">مشاكل مع الشريك ونقل العدوى</td>
                 </tr>
                 <tr>
                     <td>L'interaction avec le médecin</td>
                     <td>{{principal.Doctor}}</td>
+                    <td style="text-align: right;">التّفاعل مع الطّبيب</td>
                 </tr>
                 <tr>
                     <td>L'impact sur la vie</td>
                     <td>{{principal.Life}}</td>
+                    <td style="text-align: right;">التّأثير على الحياة</td>
                 </tr>
                 <tr>
                     <td>Score total</td>
                     <td>{{Total}}</td>
+                    <td style="text-align: right;">المجموع </td>
                 </tr>
             </table>
             <br />
@@ -97,36 +106,44 @@
             <br />
             <table>
                 <tr>
-                    <th>Domaine Alternatifs</th>
+                    <th>Domaines Alternatifs</th>
                     <th>Score</th>
+                    <th style="text-align: right;">المجالات البديلة</th>
                 </tr>
                 <tr>
                     <td>Les soucis et les préoccupations</td>
                     <td>{{alternatif.Preoccupation}}</td>
+                    <td style="text-align: right;">الهموم والمخاوف</td>
                 </tr>
                 <tr>
                     <td>L’impact émotionnel</td>
                     <td>{{alternatif.EmotionalImpact}}</td>
+                    <td style="text-align: right;">التّأثير العاطفيّ</td>
                 </tr>
                 <tr>
                     <td>L’impact sexuel</td>
                     <td>{{alternatif.SexuelImpact}}</td>
+                    <td style="text-align: right;">التّأثير الجنسيّ</td>
                 </tr>
                 <tr>
                     <td>Transmission ou traitement futur</td>
                     <td>{{alternatif.Transmission}}</td>
+                    <td style="text-align: right;">القلق من المستقبل: إنتقال العدوى والعلاج</td>
                 </tr>
                 <tr>
                     <td>Les émotions positives</td>
                     <td>{{alternatif.Positives}}</td>
+                    <td style="text-align: right;"> المشاعر الإيجابيّة</td>
                 </tr>
                 <tr>
                     <td>Les émotions négatives</td>
                     <td>{{alternatif.Negatives}}</td>
+                    <td style="text-align: right;">المشاعر السّلبيّة</td>
                 </tr>
                 <tr>
                     <td>Score total</td>
                     <td>{{Total}}</td>
+                    <td style="text-align: right;">المجموع </td>
                 </tr>
             </table>
         </div>
